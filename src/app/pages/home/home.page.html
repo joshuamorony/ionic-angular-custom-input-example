@@ -7,6 +7,30 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+
+	<ion-list no-lines>
+
+		<form [formGroup]="myForm" (change)="testValues()">
+
+		  <ion-item>
+		    <ion-label stacked>Name</ion-label>
+		    <ion-input formControlName="name" type="text"></ion-input>
+		  </ion-item>
+
+		  <ion-item>
+		    <ion-label stacked>Comment</ion-label>
+		    <ion-textarea formControlName="comment" type="text"></ion-textarea>
+      </ion-item>
+      
+      <ion-item>
+        <app-random-input formControlName="random"></app-random-input>
+      </ion-item>
+
+		</form>
+
+  </ion-list>
+
+  <ion-button (click)="changeValue()">Change Value</ion-button>
+  <ion-button (click)="checkValues()">Check Values</ion-button>
+  
 </ion-content>
